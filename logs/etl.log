@@ -1,0 +1,105 @@
+2025-09-01 20:10:36,401 INFO etl: Iniciando pipeline para Mexico — 2025-08-03 a 2025-09-02
+2025-09-01 20:10:37,680 ERROR etl.extract: Error al obtener datos para Mexico
+Traceback (most recent call last):
+  File "c:\Users\juanq\Desktop\ETL-COVID\src\extract.py", line 20, in fetch_country_confirmed
+    resp.raise_for_status()
+  File "C:\Users\juanq\Desktop\ETL-COVID\.venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://covid-api.com/api/country/Mexico/status/confirmed?from=2025-08-03&to=2025-09-02
+2025-09-01 20:10:37,681 ERROR etl: Fallo en pipeline para Mexico
+Traceback (most recent call last):
+  File "c:\Users\juanq\Desktop\ETL-COVID\src\run.py", line 18, in run
+    df_raw = fetch_country_confirmed(country, start_date.isoformat(), end_date.isoformat())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\juanq\Desktop\ETL-COVID\src\extract.py", line 20, in fetch_country_confirmed
+    resp.raise_for_status()
+  File "C:\Users\juanq\Desktop\ETL-COVID\.venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://covid-api.com/api/country/Mexico/status/confirmed?from=2025-08-03&to=2025-09-02
+2025-09-01 20:10:37,683 INFO etl: Iniciando pipeline para Colombia — 2025-08-03 a 2025-09-02
+2025-09-01 20:10:38,627 ERROR etl.extract: Error al obtener datos para Colombia
+Traceback (most recent call last):
+  File "c:\Users\juanq\Desktop\ETL-COVID\src\extract.py", line 20, in fetch_country_confirmed
+    resp.raise_for_status()
+  File "C:\Users\juanq\Desktop\ETL-COVID\.venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://covid-api.com/api/country/Colombia/status/confirmed?from=2025-08-03&to=2025-09-02
+2025-09-01 20:10:38,628 ERROR etl: Fallo en pipeline para Colombia
+Traceback (most recent call last):
+  File "c:\Users\juanq\Desktop\ETL-COVID\src\run.py", line 18, in run
+    df_raw = fetch_country_confirmed(country, start_date.isoformat(), end_date.isoformat())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\juanq\Desktop\ETL-COVID\src\extract.py", line 20, in fetch_country_confirmed
+    resp.raise_for_status()
+  File "C:\Users\juanq\Desktop\ETL-COVID\.venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://covid-api.com/api/country/Colombia/status/confirmed?from=2025-08-03&to=2025-09-02
+2025-09-01 20:10:38,629 INFO etl: Iniciando pipeline para Peru — 2025-08-03 a 2025-09-02
+2025-09-01 20:10:39,572 ERROR etl.extract: Error al obtener datos para Peru
+Traceback (most recent call last):
+  File "c:\Users\juanq\Desktop\ETL-COVID\src\extract.py", line 20, in fetch_country_confirmed
+    resp.raise_for_status()
+  File "C:\Users\juanq\Desktop\ETL-COVID\.venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://covid-api.com/api/country/Peru/status/confirmed?from=2025-08-03&to=2025-09-02
+2025-09-01 20:10:39,573 ERROR etl: Fallo en pipeline para Peru
+Traceback (most recent call last):
+  File "c:\Users\juanq\Desktop\ETL-COVID\src\run.py", line 18, in run
+    df_raw = fetch_country_confirmed(country, start_date.isoformat(), end_date.isoformat())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\juanq\Desktop\ETL-COVID\src\extract.py", line 20, in fetch_country_confirmed
+    resp.raise_for_status()
+  File "C:\Users\juanq\Desktop\ETL-COVID\.venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://covid-api.com/api/country/Peru/status/confirmed?from=2025-08-03&to=2025-09-02
+2025-09-01 20:12:51,621 INFO etl: Iniciando pipeline para Mexico — 2025-08-03 a 2025-09-02
+2025-09-01 20:13:05,565 ERROR etl: Fallo en pipeline para Mexico
+Traceback (most recent call last):
+  File "c:\Users\juanq\Desktop\ETL-COVID\src\run.py", line 19, in run
+    df_transformed, totals = process_country_df(df_raw, country, RISK_THRESHOLDS)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\juanq\Desktop\ETL-COVID\src\transform.py", line 33, in process_country_df
+    date_col = next((c for c in df.columns if "date" in c), df.columns[0])
+                                                            ~~~~~~~~~~^^^
+  File "C:\Users\juanq\Desktop\ETL-COVID\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 5401, in __getitem__
+    return getitem(key)
+           ^^^^^^^^^^^^
+IndexError: index 0 is out of bounds for axis 0 with size 0
+2025-09-01 20:13:05,567 INFO etl: Iniciando pipeline para Colombia — 2025-08-03 a 2025-09-02
+2025-09-01 20:13:19,346 ERROR etl: Fallo en pipeline para Colombia
+Traceback (most recent call last):
+  File "c:\Users\juanq\Desktop\ETL-COVID\src\run.py", line 19, in run
+    df_transformed, totals = process_country_df(df_raw, country, RISK_THRESHOLDS)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\juanq\Desktop\ETL-COVID\src\transform.py", line 33, in process_country_df
+    date_col = next((c for c in df.columns if "date" in c), df.columns[0])
+                                                            ~~~~~~~~~~^^^
+  File "C:\Users\juanq\Desktop\ETL-COVID\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 5401, in __getitem__
+    return getitem(key)
+           ^^^^^^^^^^^^
+IndexError: index 0 is out of bounds for axis 0 with size 0
+2025-09-01 20:13:19,346 INFO etl: Iniciando pipeline para Peru — 2025-08-03 a 2025-09-02
+2025-09-01 20:13:33,554 ERROR etl: Fallo en pipeline para Peru
+Traceback (most recent call last):
+  File "c:\Users\juanq\Desktop\ETL-COVID\src\run.py", line 19, in run
+    df_transformed, totals = process_country_df(df_raw, country, RISK_THRESHOLDS)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\juanq\Desktop\ETL-COVID\src\transform.py", line 33, in process_country_df
+    date_col = next((c for c in df.columns if "date" in c), df.columns[0])
+                                                            ~~~~~~~~~~^^^
+  File "C:\Users\juanq\Desktop\ETL-COVID\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 5401, in __getitem__
+    return getitem(key)
+           ^^^^^^^^^^^^
+IndexError: index 0 is out of bounds for axis 0 with size 0
+2025-09-01 20:17:48,446 INFO etl: Iniciando pipeline para Mexico — 2025-08-02 a 2025-09-01
+2025-09-01 20:18:02,109 WARNING etl.transform: DataFrame vacío para Mexico, no se puede transformar
+2025-09-01 20:18:02,131 INFO etl.load: Guardado local parquet: data\Mexico\2025-09-01.parquet
+2025-09-01 20:18:02,131 INFO etl: Finalizado Mexico — totales: {'country': 'Mexico', 'total_confirmed': 0, 'total_new_cases': 0}
+2025-09-01 20:18:02,131 INFO etl: Iniciando pipeline para Colombia — 2025-08-02 a 2025-09-01
+2025-09-01 20:18:15,777 WARNING etl.transform: DataFrame vacío para Colombia, no se puede transformar
+2025-09-01 20:18:15,780 INFO etl.load: Guardado local parquet: data\Colombia\2025-09-01.parquet
+2025-09-01 20:18:15,780 INFO etl: Finalizado Colombia — totales: {'country': 'Colombia', 'total_confirmed': 0, 'total_new_cases': 0}
+2025-09-01 20:18:15,780 INFO etl: Iniciando pipeline para Peru — 2025-08-02 a 2025-09-01
+2025-09-01 20:18:29,060 WARNING etl.transform: DataFrame vacío para Peru, no se puede transformar
+2025-09-01 20:18:29,063 INFO etl.load: Guardado local parquet: data\Peru\2025-09-01.parquet
+2025-09-01 20:18:29,063 INFO etl: Finalizado Peru — totales: {'country': 'Peru', 'total_confirmed': 0, 'total_new_cases': 0}
